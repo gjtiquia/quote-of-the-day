@@ -13,9 +13,9 @@ export function LandingPage(props: LandingPageProps) {
                 </h1>
 
                 <div className="flex flex-col gap-4 items-center">
-                    <p className="text-white">
+                    <h2 className="text-white">
                         Never forget amazing quotes ever again.
-                    </p>
+                    </h2>
 
                     <p className="text-white">
                         人哋都講咗出口，梗係笑多幾年先啦

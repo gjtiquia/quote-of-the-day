@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { LandingPage, JoinGroupPage } from "./pages"
+import { LandingPage, JoinGroupPage, GroupPage } from "./pages"
 
-type Page = "LandingPage" | "JoinGroupPage";
+type Page = "LandingPage" | "JoinGroupPage" | "GroupPage";
 
 function App() {
     const [page, setPage] = useState<Page>("LandingPage");
@@ -9,7 +9,7 @@ function App() {
     if (page === "LandingPage")
         return (
             <LandingPage
-                onCreateGroupClicked={() => console.log("create")}
+                onCreateGroupClicked={() => setPage("GroupPage")}
                 onJoinGroupClicked={() => setPage("JoinGroupPage")}
             />
         )
@@ -18,7 +18,14 @@ function App() {
         return (
             <JoinGroupPage
                 onBackClicked={() => setPage("LandingPage")}
-                onJoinClicked={(groupCode) => console.log(`joining ${groupCode}...`)}
+                onJoinClicked={(groupCode) => { console.log(`joining ${groupCode}...`); setPage("GroupPage") }}
+            />
+        )
+
+    if (page === "GroupPage")
+        return (
+            <GroupPage
+                onBackClicked={() => setPage("LandingPage")}
             />
         )
 }

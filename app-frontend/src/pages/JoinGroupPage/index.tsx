@@ -10,20 +10,14 @@ export function JoinGroupPage(props: JoinGroupPageProps) {
 
     return (
         <>
-            <div className="absolute p-2">
-                <button className="bg-stone-800 text-white px-4 py-2 rounded-md" onClick={() => props.onBackClicked()}>
-                    Back 返回
-                </button>
-            </div>
+            <div className="h-dvh flex flex-col justify-center items-center gap-8">
 
-            <div className="h-dvh flex flex-col justify-center items-center gap-16">
-
-                <section className="flex flex-col gap-8 items-center">
+                <section className="flex flex-col gap-4 items-center">
                     <h1 className="text-white text-2xl sm:text-3xl font-bold">
                         Join Group
                     </h1>
 
-                    <div className="flex flex-col gap-4 items-center">
+                    <div className="flex flex-col gap-2 items-center">
                         <p className="text-white">
                             Ask your friend to send you the code!
                         </p>
@@ -32,7 +26,6 @@ export function JoinGroupPage(props: JoinGroupPageProps) {
                             冇code點入呀
                         </p>
                     </div>
-
                 </section>
 
                 <section className="flex flex-col gap-4">
@@ -47,6 +40,12 @@ export function JoinGroupPage(props: JoinGroupPageProps) {
                     </button>
                 </section>
             </div >
+
+            <div className="absolute bottom-0 p-2">
+                <button className="bg-stone-800 text-white px-4 py-2 rounded-md" onClick={() => props.onBackClicked()}>
+                    Back 返回
+                </button>
+            </div>
         </>
     )
 }
